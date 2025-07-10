@@ -210,7 +210,7 @@ const CustomerDashboard = () => {
                   <>
                     <button className="carousel-btn left" onClick={() => handlePrev(prop._id, prop.images.length)}>◀</button>
                     <img
-                      src={`http://localhost:8000/uploads/${prop.images[imageIndexes[prop._id]]}`}
+                      src={`https://mv-realestate.onrender.com/uploads/${prop.images[imageIndexes[prop._id]]}`}
                       alt="property"
                       className="carousel-image"
                     />
