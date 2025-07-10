@@ -1,0 +1,123 @@
+/* Base styling */
+.navbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1rem 2rem;
+  background: linear-gradient(to right, #605c3c, #1f1f1f,#000000);
+  color: #fff;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+  animation: slideDown 0.5s ease-in-out;
+}
+
+#logo-c {
+  margin-left: 0px;
+  width: 70px;
+  height: 60px;
+  object-fit: contain;
+  border: 1px solid gold;
+  border-radius: 100%;
+  transition: transform 0.3s ease;
+}
+/* Logo */
+.logo {
+  display: flex;
+  align-items: center;
+  font-size: 1.5rem;
+  font-weight: bold;
+  text-decoration: none;
+  color: white;
+}
+
+.logo img {
+  width: 35px;
+  margin-right: 0.5rem;
+}
+
+/* Right section container */
+.navbar-right {
+  display: flex;
+  align-items: center;
+}
+
+/* Common button styles */
+.nav-btn {
+  padding: 8px 16px;
+  border-radius: 5px;
+  text-decoration: none;
+  margin-left: 1rem;
+  font-weight: 500;
+  transition: transform 0.3s ease, background-color 0.3s ease;
+}
+
+/* Button variants */
+.login-btn {
+  background-color: #3f51b5;
+  color: #fff;
+}
+
+.signup-btn {
+  background-color: #3f51b5;
+  color: #fff;
+}
+
+.logout-btn {
+  background-color: #dc3545;
+  color: #fff;
+  border: none;
+  cursor: pointer;
+}
+
+.home-btn {
+  background-color: #3f51b5;
+  color: #fff;
+}
+
+.contact-btn {
+  background-color: #3f51b5;
+  color: #fff;
+}
+
+.nav-btn:hover {
+  transform: scale(1.05);
+  filter: brightness(1.1);
+}
+
+/* Slide down animation */
+@keyframes slideDown {
+  from {
+    transform: translateY(-100%);
+    opacity: 0;
+  }
+  to {
+    transform: translateY(0);
+    opacity: 1;
+  }
+}
+
+/* Responsive styles */
+@media (max-width: 768px) {
+  .navbar {
+    flex-direction: column;
+    align-items: flex-start;
+    padding: 1rem;
+  }
+
+  .navbar-right {
+    margin-top: 0.5rem;
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    gap: 0.5rem;
+  }
+
+  .nav-btn {
+    width: 100%;
+    text-align: center;
+    margin-left: 0;
+  }
+}
+

@@ -1,0 +1,198 @@
+.signup-page {
+    display: flex;
+    overflow: hidden;
+    height: 100vh;
+    width: 100%;
+    font-family: 'Segoe UI', sans-serif;
+    background: #121212;
+    overflow: hidden;
+}
+
+/* Left Form Section */
+.signup-left {
+    flex: 1;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: rgb(16, 16, 16);
+    animation: fadeInSlide 1s ease-out forwards;
+    opacity: 0;
+}
+
+/* Right Image Section */
+.signup-right {
+    flex: 1;
+    background-image: url('/assets/login-image.png');
+    background-size: contain;
+    background-position: center;
+    background-repeat: no-repeat;
+    border-top-left-radius: 60px;
+    border-bottom-left-radius: 60px;
+    animation: zoomInFade 1.2s ease-out forwards;
+    opacity: 0;
+}
+
+/* Signup Box */
+.signup-box {
+    background: rgba(255, 255, 255, 0.06);
+    backdrop-filter: blur(16px);
+    border: 1px solid rgba(255, 255, 255, 0.15);
+    border-radius: 20px;
+    box-shadow: 0 0 30px rgba(0, 0, 0, 0.3);
+    padding: 2rem;
+    width: 100%;
+    max-width: 420px;
+    color: white;
+}
+
+.signup-heading {
+    font-size: 2rem;
+    text-align: center;
+    margin-bottom: 0.3rem;
+}
+
+.signup-subheading {
+    text-align: center;
+    margin-bottom: 1.5rem;
+    color: #ccc;
+}
+
+.input-group {
+    display: flex;
+    align-items: center;
+    background: rgba(255, 255, 255, 0.08);
+    padding: 0.75rem;
+    border-radius: 8px;
+    margin-bottom: 1rem;
+    border: 1px solid rgba(255, 255, 255, 0.2);
+}
+
+.input-group span {
+    margin-right: 0.6rem;
+    color: #00c6ff;
+}
+
+.input-group input {
+    border: none;
+    background: transparent;
+    color: white;
+    width: 100%;
+    outline: none;
+}
+
+.input-group input::placeholder {
+    color: rgba(255, 255, 255, 0.6);
+}
+
+.role-select {
+    width: 100%;
+    padding: 0.75rem;
+    margin-bottom: 1rem;
+    border-radius: 8px;
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    background: rgba(255, 255, 255, 0.08);
+    color: #00c6ff;
+}
+
+.role-option {
+    background-color: rgba(255, 255, 255, 0.08);
+    border-radius: 8px;
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    font-weight: bold;
+    font-weight: 16px;
+}
+
+.signup-submit {
+    background: linear-gradient(to right, #00c6ff, #0072ff);
+    color: white;
+    border: none;
+    border-radius: 8px;
+    padding: 0.9rem;
+    width: 100%;
+    font-weight: bold;
+    font-size: 1rem;
+    cursor: pointer;
+    margin-bottom: 1rem;
+}
+
+.signup-submit:hover {
+    background: linear-gradient(to right, #009dff, #005acc);
+}
+
+.login-link {
+    background: none;
+    border: none;
+    color: #00c6ff;
+    cursor: pointer;
+    text-align: center;
+    font-size: 0.95rem;
+}
+
+.error-message {
+    color: #ff4d4f;
+    font-weight: bold;
+    text-align: center;
+    margin-bottom: 0.5rem;
+}
+
+.success-message {
+    color: #28a745;
+    font-weight: bold;
+    text-align: center;
+    margin-bottom: 0.5rem;
+}
+
+/* Responsive */
+@media (max-width: 900px) {
+    .signup-page {
+        flex-direction: column;
+    }
+
+    .signup-right {
+        display: none;
+    }
+
+    .signup-left {
+        width: 100%;
+        padding: 2rem;
+    }
+}
+
+.password-input-group {
+    position: relative;
+}
+
+.toggle-password {
+    position: absolute;
+    right: 10px;
+    top: 50%;
+    transform: translateY(-50%);
+    cursor: pointer;
+    font-size: 1.2rem;
+    color: #00c6ff;
+}
+
+/* Animations */
+@keyframes fadeInSlide {
+    from {
+        opacity: 0;
+        transform: translateY(30px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@keyframes zoomInFade {
+    from {
+        opacity: 0;
+        transform: scale(0.92);
+    }
+
+    to {
+        opacity: 1;
+        transform: scale(1);
+    }
+}

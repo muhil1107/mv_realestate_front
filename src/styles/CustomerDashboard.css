@@ -1,0 +1,313 @@
+.customer-dashboard {
+  padding: 2rem;
+  background: #121212;
+  color: #fff;
+  min-height: 100vh;
+  font-family: 'Segoe UI', sans-serif;
+}
+
+.customer-dashboard h2 {
+  text-align: center;
+  font-size: 2rem;
+  color: #00bcd4;
+}
+
+.customer-grid {
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+  margin-top: 2rem;
+}
+
+.customer-card {
+  background: #1e1e1e;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1.5rem;
+  padding: 1.5rem;
+  border-radius: 12px;
+  box-shadow: 0 0 20px rgba(255, 255, 255, 0.05);
+  position: relative;
+  transition: transform 0.3s ease;
+  max-width: 900px;
+  width: 100%;
+}
+
+.customer-card:nth-child(even) {
+  flex-direction: row-reverse;
+  align-self: flex-end;
+}
+
+.customer-card:hover {
+  transform: translateY(-5px);
+}
+
+.customer-card::after {
+  content: "";
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 12px;
+  height: 12px;
+  border-radius: 50%;
+  background: #555;
+  transition: background 0.3s ease, box-shadow 0.3s ease;
+  z-index: 0;
+}
+
+.customer-card:nth-child(odd)::after {
+  right: -20px;
+}
+
+.customer-card:nth-child(even)::after {
+  left: -20px;
+}
+
+.customer-card:hover::after {
+  background: #00bcd4;
+  box-shadow: 0 0 10px #00bcd4;
+}
+
+.customer-carousel {
+  position: relative;
+  width: 300px;
+  height: 200px;
+  flex-shrink: 0;
+}
+
+.carousel-image {
+  width: 100%;
+  height: 100%;
+  border-radius: 10px;
+  object-fit: cover;
+}
+
+.carousel-btn {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  background: rgba(0, 0, 0, 0.5);
+  border: none;
+  color: white;
+  padding: 6px 10px;
+  cursor: pointer;
+  z-index: 2;
+  font-size: 1.4rem;
+  border-radius: 50%;
+}
+
+.carousel-btn.left {
+  left: 5px;
+}
+
+.carousel-btn.right {
+  right: 5px;
+}
+
+.customer-info {
+  flex: 1;
+  min-width: 250px;
+}
+
+.book-btn {
+  margin-top: 1rem;
+  background: linear-gradient(to right, #ff8a00, #e52e71);
+  color: #fff;
+  padding: 10px 16px;
+  border: none;
+  border-radius: 8px;
+  font-weight: bold;
+  cursor: pointer;
+}
+
+.book-btn:hover {
+  filter: brightness(1.1);
+}
+
+.filter-controls {
+  display: flex;
+  justify-content: flex-end;
+  gap: 1rem;
+  margin-left: 10px;
+  flex-wrap: wrap;
+}
+
+.filter-controls select,
+.filter-controls input {
+  padding: 8px 12px;
+  border-radius: 6px;
+  border: none;
+  font-weight: bold;
+  background-color: #2c2c2c;
+  color: white;
+  cursor: pointer;
+  min-width: 150px;
+}
+
+.filter-controls input::placeholder {
+  color: #aaa;
+}
+
+.filter-controls select:focus,
+.filter-controls input:focus {
+  outline: 2px solid #00bcd4;
+}
+
+.status-text {
+  text-align: center;
+  color: #aaa;
+  margin-top: 2rem;
+}
+
+.welcome-text {
+  font-size: 2rem;
+  text-align: center;
+  margin-bottom: 0.5rem;
+}
+
+.sub-text {
+  text-align: left;
+  font-size: 1rem;
+  color: #ccc;
+  margin-bottom: 1.5rem;
+}
+
+/* 🟢 Booking Section: Split layout */
+.booking-columns {
+  display: flex;
+  gap: 2rem;
+  flex-wrap: wrap;
+  margin: 1rem 0 2rem;
+}
+
+.booking-column {
+  flex: 1;
+  min-width: 300px;
+  background: #1b1b1b;
+  padding: 1rem;
+  border-radius: 8px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+}
+
+.left-column {
+  border-left: 4px solid lime;
+}
+
+.right-column {
+  border-right: 4px solid crimson;
+}
+
+.booking-column h4 {
+  color: #00bcd4;
+  margin-bottom: 1rem;
+  font-size: 1.2rem;
+}
+
+.booking-item {
+  background: #2a2a2a;
+  margin-bottom: 1rem;
+  padding: 0.75rem 1rem;
+  border-radius: 6px;
+  font-size: 0.95rem;
+  border-left: 4px solid transparent;
+}
+
+.booking-item strong {
+  color: #00bcd4;
+}
+
+.booking-item.accepted {
+  border-left-color: lime;
+}
+
+.booking-item.rejected {
+  border-left-color: crimson;
+}
+
+.booking-item.pending {
+  border-left-color: gold;
+}
+
+@media (max-width: 768px) {
+  .customer-card {
+    flex-direction: column !important;
+    align-items: center;
+  }
+
+  .customer-carousel {
+    width: 100%;
+    max-width: 300px;
+  }
+
+  .customer-info {
+    text-align: center;
+  }
+
+  .filter-controls {
+    flex-direction: column;
+    align-items: stretch;
+  }
+
+  .filter-controls select,
+  .filter-controls input {
+    width: 100%;
+  }
+
+  .booking-columns {
+    flex-direction: column;
+  }
+}
+/* ✅ Category count badge */
+.booking-column h4::after {
+  content: attr(data-count);
+  background-color: #00bcd4;
+  color: black;
+  font-size: 0.75rem;
+  font-weight: bold;
+  padding: 2px 6px;
+  border-radius: 8px;
+  margin-left: 8px;
+}
+
+/* ✅ Animated badge icons for each booking */
+.booking-item::before {
+  content: '';
+  display: inline-block;
+  width: 14px;
+  height: 14px;
+  border-radius: 50%;
+  margin-right: 8px;
+  vertical-align: middle;
+  animation: popIn 0.3s ease;
+}
+
+.booking-item.accepted::before {
+  background-color: limegreen;
+}
+
+.booking-item.pending::before {
+  background-color: gold;
+}
+
+.booking-item.rejected::before {
+  background-color: crimson;
+}
+
+/* ✅ Hover effect */
+.booking-item:hover {
+  background: #333;
+  transform: scale(1.02);
+  transition: all 0.3s ease;
+}
+
+/* ✅ Pop-in animation */
+@keyframes popIn {
+  0% {
+    transform: scale(0.4);
+    opacity: 0;
+  }
+  100% {
+    transform: scale(1);
+    opacity: 1;
+  }
+}

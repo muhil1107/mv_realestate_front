@@ -1,0 +1,219 @@
+/* Global body */
+body {
+  background: radial-gradient(circle at top left, #1a1a1a, #000000);
+  color: white;
+  font-family: 'Segoe UI', sans-serif;
+  margin: 0;
+  padding: 0;
+}
+
+/* Back button at top-left */
+.back-button-fixed {
+  margin-top: 1rem;
+  top: 20px;
+  left: 20px;
+  z-index: 999;
+  background: linear-gradient(to right, #444, #222);
+  color: white;
+  border: none;
+  border-radius: 6px;
+  padding: 0.7rem 1.2rem;
+  font-weight: bold;
+  cursor: pointer;
+  box-shadow: 0 0 10px rgba(0, 198, 255, 0.2);
+  transition: background 0.3s, transform 0.2s ease, box-shadow 0.3s;
+}
+
+.back-button-fixed:hover {
+  background: linear-gradient(to right, #666, #333);
+  box-shadow: 0 0 15px rgba(0, 198, 255, 0.3);
+}
+
+.back-button-fixed:active {
+  transform: scale(0.97);
+}
+
+/* Container */
+.add-property-container {
+  max-width: 650px;
+  margin: 5px auto 4rem auto;
+  padding: 2.5rem 2rem;
+  background: linear-gradient(to bottom right, #1e1e1e, #121212);
+  border-radius: 16px;
+  box-shadow: 0 0 18px rgba(0, 255, 255, 0.15);
+  animation: fadeIn 0.6s ease;
+  color: #fff;
+}
+
+/* Heading */
+.add-property-container h2 {
+  margin-bottom: 2rem;
+  text-align: center;
+  font-size: 2.2rem;
+  font-weight: bold;
+  background: linear-gradient(to right, #00c6ff, #0072ff);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+/* Form */
+.add-property-form {
+  display: flex;
+  flex-direction: column;
+  gap: 1.3rem;
+}
+
+/* Labels */
+.add-property-form label {
+  font-size: 1rem;
+  color: #ccc;
+  margin-left: 2px;
+  font-weight: 500;
+}
+
+/* Inputs and Textarea */
+.add-property-form input[type="text"],
+.add-property-form input[type="number"],
+.add-property-form input[type="file"],
+.add-property-form textarea {
+  padding: 0.9rem;
+  border: 1px solid #333;
+  border-radius: 8px;
+  font-size: 1rem;
+  background-color: #1e1e1e;
+  color: #f5f5f5;
+  transition: border 0.3s ease, box-shadow 0.3s ease, background 0.3s;
+  box-shadow: inset 0 0 4px rgba(0, 198, 255, 0.05);
+}
+
+.input-title, .input-location{
+  background-color: #1e1e1e;
+  color: white;
+  font-size: 1rem;
+  border: 1px solid #333;
+  padding: 0.9rem ;
+  border-radius: 8px;
+  transition: border 0.3s ease, box-shadow 0.3s ease;
+}
+
+.add-property-form textarea {
+  resize: vertical;
+  min-height: 70px;
+  max-height: 150px;
+}
+
+/* Focus Effects */
+.add-property-form input:focus,
+.add-property-form textarea:focus {
+  outline: none;
+  border-color: #00c6ff;
+  box-shadow: 0 0 8px rgba(0, 198, 255, 0.4);
+  background-color: #1c1c1c;
+}
+
+/* File input hint */
+.add-property-form small {
+  font-size: 0.8rem;
+  color: #999;
+  margin-top: -8px;
+  margin-bottom: 6px;
+}
+
+/* Submit Button */
+.add-property-form button[type="submit"] {
+  padding: 0.9rem;
+  background: linear-gradient(to right, #00c6ff, #0072ff);
+  border: none;
+  color: white;
+  font-weight: bold;
+  font-size: 1rem;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: transform 0.2s ease, box-shadow 0.3s ease;
+  box-shadow: 0 0 12px rgba(0, 198, 255, 0.25);
+}
+
+.add-property-form button[type="submit"]:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 0 20px rgba(0, 198, 255, 0.4);
+}
+
+.add-property-form button[type="submit"]:active {
+  transform: scale(0.98);
+}
+
+/* Message */
+.message {
+  margin-top: 1rem;
+  font-weight: bold;
+  animation: fadeIn 0.5s ease-in;
+  text-align: center;
+  font-size: 1rem;
+}
+
+.message.success {
+  color: #28a745;
+}
+
+.message.error {
+  color: #e74c3c;
+}
+
+/* Image Previews */
+.image-preview-container {
+  display: flex;
+  gap: 0.7rem;
+  margin-top: 1rem;
+  flex-wrap: wrap;
+}
+
+.image-preview-container img {
+  width: 100px;
+  height: 100px;
+  object-fit: cover;
+  border-radius: 8px;
+  border: 1px solid #555;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.image-preview-container img:hover {
+  transform: scale(1.06);
+  box-shadow: 0 0 10px rgba(0, 198, 255, 0.3);
+}
+
+/* Fade animation */
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(15px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Responsive Design */
+@media screen and (max-width: 600px) {
+  .add-property-container {
+    padding: 1.5rem 1rem;
+    margin: 4rem 1rem 2rem 1rem;
+  }
+
+  .add-property-form input,
+  .add-property-form textarea,
+  .add-property-form button {
+    font-size: 0.95rem;
+    padding: 0.8rem;
+  }
+
+  .image-preview-container img {
+    width: 80px;
+    height: 80px;
+  }
+
+  .back-button-fixed {
+    padding: 0.6rem 1rem;
+    font-size: 0.9rem;
+  }
+}
