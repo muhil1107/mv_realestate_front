@@ -1,10 +1,9 @@
 import axios from 'axios';
 
-const BASE_URL = "https://mv-realestate.onrender.com";
-
-export const API = axios.create({
-  baseURL: BASE_URL,
+const API = axios.create({
+  baseURL: 'https://mv-realestate.onrender.com/api',
 });
+
 // Add token to headers automatically
 API.interceptors.request.use((config) => {
   const token = localStorage.getItem('token');
