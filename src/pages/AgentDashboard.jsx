@@ -165,7 +165,7 @@ const AgentDashboard = () => {
                   <div className="carousel-container">
                     <button onClick={() => handlePrevImage(prop._id, prop.images.length)} className="carousel-btn left">◀</button>
                     <img
-                      src={`http://localhost:8000/uploads/${prop.images[imageIndexes[prop._id]]}`}
+                      src={`https://mv-realestate.onrender.com/uploads/${prop.images[imageIndexes[prop._id]]}`}
                       alt="property"
                       className="carousel-image"
                     />
